@@ -1,0 +1,8 @@
+[package]
+name = "disjoint-hash-set"
+version = "0.1.0"
+authors = ["znrm <zaniarmoradian@gmail.com>"]
+edition = "2018"
+description = "A disjoint set / union-find data structure suitable for incremental tracking of connected component identified by their hash."
+
+[dependencies]
