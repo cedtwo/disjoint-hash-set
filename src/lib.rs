@@ -156,7 +156,8 @@ impl<K: Eq + Hash> DisjointHashSet<K> {
 
     fn find(&mut self, id: PointerId) -> PointerId {
         let parent_id = self.get(id).parent;
-        if id == parent_id {
+        let grandparent_id = self.get(parent_id).parent;
+        if parent_id == grandparent_id {
             parent_id
         } else {
             let root_id = self.find(parent_id);
