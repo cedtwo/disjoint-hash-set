@@ -15,6 +15,7 @@ algorithms.
 
 ```rust
 use disjoint_hash_set::DisjointHashSet;
+
 let mut djhs = DisjointHashSet::new();
 djhs.link("hello", "hi");
 djhs.link("hello", "👋");

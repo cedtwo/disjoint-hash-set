@@ -19,6 +19,7 @@ use std::{
 /// ## Examples
 /// ```
 /// use disjoint_hash_set::DisjointHashSet;
+///
 /// let mut djhs = DisjointHashSet::new();
 /// djhs.link("hello", "hi");
 /// djhs.link("hello", "👋");
@@ -50,6 +51,7 @@ impl<K: Eq + Hash> DisjointHashSet<K> {
     /// # Example
     /// ```
     /// use disjoint_hash_set::DisjointHashSet;
+    ///
     /// let mut djhs = DisjointHashSet::new();
     /// assert!(!djhs.contains(&"a"));
     /// djhs.insert(&"a");
@@ -64,6 +66,7 @@ impl<K: Eq + Hash> DisjointHashSet<K> {
     ///
     /// ```
     /// use disjoint_hash_set::DisjointHashSet;
+    ///
     /// let mut djhs = DisjointHashSet::new();
     /// assert!(djhs.insert(&"a"));
     /// assert!(!djhs.insert(&"a"));
@@ -76,8 +79,8 @@ impl<K: Eq + Hash> DisjointHashSet<K> {
     /// This will not implicitly add values that were not already present.
     /// ```
     /// use disjoint_hash_set::DisjointHashSet;
-    /// let mut djhs = DisjointHashSet::new();
     ///
+    /// let mut djhs = DisjointHashSet::new();
     /// djhs.link("a", "b");
     /// djhs.link("a", "c");
     /// assert!(djhs.is_linked("b", "c"));
@@ -96,6 +99,7 @@ impl<K: Eq + Hash> DisjointHashSet<K> {
     /// non-existent values in the process.
     /// ```
     /// use disjoint_hash_set::DisjointHashSet;
+    ///
     /// let mut djhs = DisjointHashSet::new();
     ///
     /// djhs.link("a", "b");
