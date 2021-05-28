@@ -1,0 +1,3 @@
+(function() {var implementors = {};
+implementors["disjoint_hash_set"] = [{"text":"impl&lt;K&gt; Freeze for <a class=\"struct\" href=\"disjoint_hash_set/struct.DisjointHashSet.html\" title=\"struct disjoint_hash_set::DisjointHashSet\">DisjointHashSet</a>&lt;K&gt;","synthetic":true,"types":["disjoint_hash_set::DisjointHashSet"]}];
+if (window.register_implementors) {window.register_implementors(implementors);} else {window.pending_implementors = implementors;}})()
