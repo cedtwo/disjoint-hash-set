@@ -4,6 +4,8 @@ A Rust implementation of a disjoint set / union-find data structure for incremen
 
 Incorporates rank-based set joins and path compression to ensure the asymptotically optimal time complexity associated with union-find algorithms.
 
+**See the [reference docs](https://docs.rs/disjoint-hash-set) for examples, typical usage, and detailed documentation.**
+
 ```rust
 use disjoint_hash_set::DisjointHashSet;
 
@@ -20,5 +22,6 @@ let djhs = vec![("a", "b"), ("a", "c"), ("d", "e"), ("f", "f")]
 // Consume djhs to iterate over each disjoint set
 let sets = djhs.sets(); // looks like [{"a", "b", "c"}, {"d", "e"}, {"f"}]
 assert_eq!(sets.count(), 3);
-
 ```
+
+Issues, requests, contributions, and general feedback are welcome.
