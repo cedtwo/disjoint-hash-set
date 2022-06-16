@@ -2,8 +2,12 @@
 name = "disjoint-hash-set"
 version = "1.0.0"
 authors = ["znrm <zaniarmoradian@gmail.com>"]
-edition = "2018"
+edition = "2021"
 description = "A disjoint set / union-find data structure suitable for incremental tracking of connected component identified by their hash."
 license = "CC0-1.0"
+keywords = ["disjoint-set", "union-find", "data-structures"]
+categories = ["data-structures"]
+repository = "https://github.com/znrm/disjoint-hash-set"
+readme = "README.md"
 
 [dependencies]

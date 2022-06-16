@@ -32,7 +32,6 @@ use std::{
     borrow::Borrow,
     collections::{HashMap, HashSet},
     hash::Hash,
-    iter::FromIterator,
 };
 
 #[derive(Debug, Clone)]
