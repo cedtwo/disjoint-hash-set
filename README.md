@@ -4,8 +4,6 @@ A Rust implementation of a disjoint set / union-find data structure for incremen
 
 Incorporates rank-based set joins and path compression to ensure the asymptotically optimal time complexity associated with union-find algorithms.
 
-**See the [reference docs](https://znrm.github.io/disjoint-hash-set/disjoint_hash_set/struct.DisjointHashSet.html) for examples, typical usage, and detailed documentation.**
-
 ```rust
 use disjoint_hash_set::DisjointHashSet;
 
