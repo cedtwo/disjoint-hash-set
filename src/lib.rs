@@ -65,6 +65,21 @@ impl<K: Eq + Hash> DisjointHashSet<K, RandomState> {
 }
 
 impl<K: Eq + Hash, S: BuildHasher> DisjointHashSet<K, S> {
+    /// Creates an empty `DisjointHashSet` which will use the given hash builder
+    /// to hash keys.
+    ///
+    /// # Example
+    /// ```
+    /// # use std::collections::HashMap;
+    /// # use std::hash::RandomState;
+    /// use disjoint_hash_set::DisjointHashSet;
+    /// let s = RandomState::new();
+    /// let mut djhs: DisjointHashSet<&str> = DisjointHashSet::with_hasher(s);
+    /// ```
+    pub fn with_hasher(hash_builder: S) -> Self {
+        Self { ids: HashMap::with_hasher(hash_builder), data: Vec::new() }
+    }
+
     /// Check if the value has already been inserted.
     ///
     /// # Example
