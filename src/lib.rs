@@ -31,27 +31,29 @@
 use std::{
     borrow::Borrow,
     collections::{HashMap, HashSet},
-    hash::Hash,
+    hash::{BuildHasher, Hash, RandomState},
 };
 
 #[derive(Debug, Clone)]
-pub struct DisjointHashSet<K> {
-    ids: HashMap<K, PointerId>,
+pub struct DisjointHashSet<K, S = RandomState> {
+    ids: HashMap<K, PointerId, S>,
     data: Vec<ParentPointer>,
 }
 
-impl<K: Eq + Hash> DisjointHashSet<K> {
+impl<K: Eq + Hash> DisjointHashSet<K, RandomState> {
     /// Creates an empty `DisjointHashSet`.
     ///
     /// # Example
     /// ```
-    /// use disjoint_hash_set ::DisjointHashSet;
+    /// use disjoint_hash_set::DisjointHashSet;
     /// let mut djhs: DisjointHashSet<&str> = DisjointHashSet::new();
     /// ```
     pub fn new() -> Self {
         Self { ids: HashMap::new(), data: Vec::new() }
     }
+}
 
+impl<K: Eq + Hash, S: BuildHasher> DisjointHashSet<K, S> {
     /// Check if the value has already been inserted.
     ///
     /// # Example
