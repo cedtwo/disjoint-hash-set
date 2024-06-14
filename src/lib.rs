@@ -57,7 +57,7 @@ impl<K: Eq + Hash> DisjointHashSet<K, RandomState> {
     /// # Example
     /// ```
     /// use disjoint_hash_set::DisjointHashSet;
-    /// let mut djhs: DisjointHashSet<&str> = DisjointHashSet::with_capacity(1);
+    /// let mut djhs: DisjointHashSet<&str> = DisjointHashSet::with_capacity(10);
     /// ```
     pub fn with_capacity(capacity: usize) -> Self {
         Self { ids: HashMap::with_capacity(capacity), data: Vec::with_capacity(capacity) }
@@ -78,6 +78,24 @@ impl<K: Eq + Hash, S: BuildHasher> DisjointHashSet<K, S> {
     /// ```
     pub fn with_hasher(hash_builder: S) -> Self {
         Self { ids: HashMap::with_hasher(hash_builder), data: Vec::new() }
+    }
+
+    /// Creates an empty `DisjoingHashSet` with at least the specified capacity,
+    /// using `hasher` to hash the keys.
+    ///
+    /// # Example
+    /// ```
+    /// # use std::collections::HashMap;
+    /// # use std::hash::RandomState;
+    /// use disjoint_hash_set::DisjointHashSet;
+    /// let s = RandomState::new();
+    /// let mut djhs: DisjointHashSet<&str> = DisjointHashSet::with_capacity_and_hasher(10, s);
+    /// ```
+    pub fn with_capacity_and_hasher(capacity: usize, hasher: S) -> Self {
+        Self {
+            ids: HashMap::with_capacity_and_hasher(capacity, hasher),
+            data: Vec::with_capacity(capacity),
+        }
     }
 
     /// Check if the value has already been inserted.
