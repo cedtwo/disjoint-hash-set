@@ -51,6 +51,17 @@ impl<K: Eq + Hash> DisjointHashSet<K, RandomState> {
     pub fn new() -> Self {
         Self { ids: HashMap::new(), data: Vec::new() }
     }
+
+    /// Creates an empty `DisjointHashSet` with at least the specified capacity.
+    ///
+    /// # Example
+    /// ```
+    /// use disjoint_hash_set::DisjointHashSet;
+    /// let mut djhs: DisjointHashSet<&str> = DisjointHashSet::with_capacity(1);
+    /// ```
+    pub fn with_capacity(capacity: usize) -> Self {
+        Self { ids: HashMap::with_capacity(capacity), data: Vec::with_capacity(capacity) }
+    }
 }
 
 impl<K: Eq + Hash, S: BuildHasher> DisjointHashSet<K, S> {
